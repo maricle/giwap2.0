@@ -1,0 +1,36 @@
+:root {
+    /* make the backend contents as wide as the browser window */
+    --body-max-width: 100%;}
+/*estados de trabajo*/
+.estado-trabajo{ padding: 0px 5px; border-radius: 5px; color: white; font-size: small; display: block; text-align: center}
+.pendiente{ background-color: #00c0ef;  }
+.nuevo{background-color:  #c7c3c3}
+.original{ background-color: #ff0 ;color: darkgray}
+.taller{ background-color: #f56954;  }
+/*.impresion {   background-color: #f39c12;  }*/
+.terminado{ background-color: #ff851b; }
+/*.oficina {  background-color: #00a65a; }*/
+.entregado_p{ background-color: #1ea471; }
+.entregado{   background-color: #00c0ef;  }
+.finalizado{background-color:  	#f35c12}
+.impresion{background-color:  #f39c12}
+.pendiente{background-color:  	#f7c55c}
+.enviado{  background-color: fuchsia;}
+.recibido{background-color: aqua;color: darkgray}
+.precio_small{ color: grey}
+.prioridad_1{ color: lightgrey}
+.prioridad_2{ color: orange}
+.prioridad_3{ color: red}
+
+/*foms*/
+.full-width{ width: 100%; max-width: 1000px !important;}
+/*.form-widget-compound .form-group {  float: left !important;   display: inline;}*/
+.label-tipo{padding: 0px 5px; border: 1px solid; border-radius: 5px; color: whitesmoke ; border-color: #efefef; margin : 0px 5px}
+.tipo-laser{ background-color: cyan;}
+.tipo-plotter_hp{ background-color: magenta;}
+.tipo-offset{  background-color: grey;}
+.tipo-plotter_big{ background-color: yellow;}
+.tipopv-oficina{ background-color: darkblue;}
+.tipopv-taller{ background-color: gray;}
+.color_ctacte{color: brown; font-weight: bold}
+.deudor{ color: darkred}

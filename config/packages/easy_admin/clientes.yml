@@ -1,0 +1,37 @@
+## YAML Template.
+---
+easy_admin:
+    entities:
+        Clientes:
+            class: App\Entity\Persona
+            controller: App\Controller\PersonaController
+            search: [nombre, apellido, documento, email]
+            list:   
+                fields:
+                    - id
+                    - {property: apellido, label: Apellido/RazonSocial}
+                    - nombre
+                    - documento
+                    - {property: gremio,  label: es gremio?}
+                    - deuda
+                actions:
+                    - edit
+                    - { name: verordenes, label: 'ordenes', icon: money, type: route}
+                    - { name: crear_orden, label: 'nueva orden', icon: 'gear', type: route}
+                    - { name: estado_de_cuenta, label: 'Estado CTA', icon: 'money', type: route}
+                    
+          #  form:
+              #  fields:
+                    #- { type: group, css_class: 'col-sm-9' }
+                    #- apellido
+                    #- nombre
+                    #- { property: 'tipo_documento', type: 'collection'}
+                    #- documento
+                    # condicion_iva
+                    ## direccion
+                   # - telefono
+                   # - email
+                    #- habilitado
+                    #- gremio
+                    
+   

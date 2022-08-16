@@ -1,0 +1,6 @@
+{% extends "content_base.html.twig" %}
+algoo
+{% block javascripts %}
+    {{ parent() }}
+        <script src="{{ asset('js/admin.js') }}" type="text/javascript"></script>
+    {% endblock %}

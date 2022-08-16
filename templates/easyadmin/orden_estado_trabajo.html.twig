@@ -1,0 +1,6 @@
+<span  id="estado_{{item.id}}" class="float-left estado-trabajo {{ item.estadotrabajo| lower  }}">  {{ item.estadotrabajo }}   
+<a id="cambiar_estado " href="#" onclick="cambiarestado( {{ item.id }})" class="float-right"> ></a>
+</span>
+
+ 
+{% if item.saldo > 0 %} <a href="#" class="fa fa-fw fa-money float-center" title="Registrar Pago" onclick="registrarpago({{ item.id }})"></a>{% endif %}

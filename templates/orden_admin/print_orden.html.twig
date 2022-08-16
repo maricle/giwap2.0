@@ -1,0 +1,122 @@
+
+<style media="print">
+    hr {border: 0; height: 2px; border-top: 1px dashed black; border-bottom: 1px dashed black;}
+    body{font-family: sans-serif; font-size: 12px}
+    .fleft {float: left;} 
+    .fright {float: right;} 
+    .titulo{font-size: 24px} 
+    .tipopv-oficina{ background-color: lightblue;}
+    .tipopv-taller{ background-color: red;}
+    .clear-fix{clear: both}
+    .linea{border-bottom: 1px solid }
+    @page{
+
+        size: 21cm 29.7cm;
+        margin: 15mm 15mm 15mm 15mm; /* change the margins as you want them to be. */
+
+    }
+
+</style> 
+
+<body>
+
+    <div  style="height:120mm;max-height: 120mm">
+        <div class="clear-fix">
+
+
+            <div style=" width: 30%; float: left; text-align: center">
+                <h1> Grupo Ideas</h1> 
+                <h3><small>Soluciones Graficas</small></h3>
+            </div>
+
+
+            <div style=" width: 30%; float: right; text-align: center">
+                <h3 >Orden Nro - {{ orden.id }}  </h3>
+                <h3 class="fright clear-fix">{{ orden.fecha.format('d-m-Y')}} </h3>
+            </div>
+
+        </div>
+        <span class="clear-fix" style="float: right; clear: both; border-bottom: 0.5px solid gray" > </span>
+        <div style="with: 100%; clear: both; background-color: #EFEFEF; padding: 5px">
+            <p> <strong>  Cliente:</strong>  {{ orden.persona.apellido}} {{  orden.persona.nombre}}<br>  </p>
+            <p style="width: 20%"> <strong> Direccion: </strong>< {{ orden.persona.direccion }}  </p>
+            <p><span><strong> Retira en:</strong> <span class="tipopv-{{ orden.sucursal }}">{{ orden.sucursal }}</span>  &nbsp;&nbsp;<strong> Realizado en:</strong> <span class="tipopv-{{ orden.puntodeventa }}">{{ orden.puntodeventa }}</span>  &nbsp;&nbsp;<strong> Prioridad:</strong> {{ orden.prioridad }} </p> 
+        </div>
+         <hr class="clear-fix" style="width:100%;text-align:left;margin-left:0;">
+        <div class="clear-fix">   
+             <strong> Trabajo:</strong>  {{ orden.nombre }}    
+            <table style="padding: 5px;  padding: 5px">       
+
+                <tr style="with: 50mmx" > <td colspan="3">  <strong>  Descripcion:</strong>  <br>{{ orden.descripcion }}   <br> <br></td></tr>
+                <tr> 
+                    <td style="width: 30%">  <strong> Cantidad:</strong>  {{ orden.cantidad }}  </td> 
+                    <td style="width: 30%">  <strong> Papel: </strong> {{ orden.papel }}   </td> 
+                    <td style="width: 30%"> <strong> Medida:</strong> {{ orden.medidatrabajo }}  </td>
+                </tr>
+
+            </table>
+             
+
+        </div>
+
+    </div>
+  
+   
+     
+    <div style="height:120mm;max-height: 120mm">
+        <div style=" clear: both ;with: 100%" >
+
+
+            <div style=" width: 30%; float: left; text-align: center">
+                <h1> Grupo Ideas</h1> 
+                <h3><small>Soluciones Graficas</small></h3>
+            </div>
+
+
+            <div style=" width: 30%; float: right; text-align: center">
+                <h3 >Orden Nro - {{ orden.id }}  </h3>
+                <h3 class="fright clear-fix">{{ orden.fecha.format('d-m-Y')}} </h3>
+            </div>
+
+        </div>
+        <span class="clear-fix" style="float: right; clear: both; border-bottom: 1px solid gray" > </span>
+        <div style="with: 100%; clear: both; background-color: #EFEFEF; padding: 5px">
+
+            <p>  <strong>  Cliente:</strong>  {{ orden.persona.apellido}} {{  orden.persona.nombre}}<br>  </p>
+            <p style="width: 20%"> <strong> Direccion: </strong>< {{ orden.persona.direccion }}  </p>
+           <p><strong> Retira en:</strong> <span class="tipopv-{{ orden.puntodeventa }}">{{ orden.puntodeventa }}</span>  &nbsp;&nbsp;<strong> Prioridad:</strong> {{ orden.prioridad }} </p> 
+         </div>
+        <hr class="clear-fix" style="width:100%;text-align:left;margin-left:0">
+        <div class="clear-fix">   
+            <strong> Trabajo:</strong>  {{ orden.nombre }}    
+            <table style="padding: 5px;  padding: 5px">       
+
+                <tr style="with: 50mmx" > <td colspan="3">  <strong>  Descripcion:</strong>  <br>{{ orden.descripcion }}   <br> <br></td></tr>
+                <tr> 
+                    <td style="width: 30%">  <strong> Cantidad:</strong>  {{ orden.cantidad }}  </td> 
+                    <td style="width: 30%">  <strong> Papel: </strong> {{ orden.papel }}   </td> 
+                    <td style="width: 30%"> <strong> Medida:</strong> {{ orden.medidatrabajo }}  </td>
+                </tr>
+
+            </table>
+            <br>
+            <br>
+            <br>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+## YAML Template.
+---
+easy_admin:
+    entities:
+        Pagos:
+            class: App\Entity\Pago
+            list:
+                filters: [ id,fecha,  orden, persona]
+                fields:
+                   - fecha
+                   - { property: orden, label: Orden, type_options: {disable: true} }
+                   
+                   - {property: persona, label: Cliente}
+                   - tipodepago
+                   - {property: referencia, label: 'Nro Referecia'}
+                   - {property: valor }
+            form:
+                fields:
+                    - { type: group,   label: 'Informacion del Pago'}
+                   
+                    - { property: fecha, type_options: { widget: 'single_text' }, css_class: 'col-sm-3'  } 
+                    - { property: orden, label: Orden , css_class: 'col-sm-3'}
+                    - { property: persona, label: Cliente, css_class: col-sm-6}
+                    - { property: descripcion, css_class: col-sm-12}
+                    - { property: tipodepago, label: Tipo, css_class: 'col-sm-4'} 
+                    - { property: referencia, label: 'Nro Referecia', css_class: 'col-sm-4'}
+                    - { property: valor , type: money, css_class: 'col-sm-4' }

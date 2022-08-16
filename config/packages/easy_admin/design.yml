@@ -1,0 +1,60 @@
+## YAML Template.
+---
+easy_admin:
+    design:
+        menu:
+            - {label: Dashboard, route: admin_dashboard, icon: 'dashboard', default: true} 
+           
+            
+            - { entity: Ordenes, label: 'Orden', icon: 'cog'}
+            - { entity: Ordenes, label: 'Nueva Orden', icon: 'plus', params: { action: new }}
+            - { entity: OrdenesTransito, label: 'en Transito', icon: 'truck'}
+            - { entity: OrdenesArchivo, label: 'Archivadas', icon: 'archive'}
+#            
+#            -   label: Ventas
+#                icon: 'money'
+#                children:
+#                    - {entity: Ventas, icon: 'shopping-cart'}
+                     
+            - {entity: Pagos, icon: 'money' , permission: [ 'ROLE_ADMIN']}
+            - {entity: Clientes, icon: 'briefcase'}
+            - {entity: Compras, icon: 'table' , permission: [ 'ROLE_ADMIN']}
+            - 
+                label: Archivo 
+                children:
+                    - {entity: Productos, icon: 'table', permission: [ 'ROLE_ADMIN']}
+                    - {entity: Tipodetrabajo, icon: 'genderless', permission: [ 'ROLE_ADMIN']}
+                    - {entity: Tipocomprobante, icon: 'genderless', permission: [ 'ROLE_ADMIN']}
+                    - {entity: Estadotrabajo, icon: 'map-pin',  permission: [ 'ROLE_ADMIN']}
+                    - {entity: Alicuota, icon: 'anchor', permission: [ 'ROLE_ADMIN']}
+            - {entity: User, icon: 'user'}
+            - { entity: LineaOrden, icon: 'achor'}
+        brand_color: '#d63d89'
+ 
+        assets:
+            css:
+                # ...
+                - 'css/admin.css'
+            js:
+                - 'js/admin.js'
+
+    show:
+        title: '%%entity_label%% (%%entity_id%%)'
+        actions:
+            - { name: edit, icon: pencil, label: ''} 
+            - { name: list, icon: 'arrow-left', label: 'Listado'}
+    edit:
+        actions:
+            - { name: list, icon: 'arrow-left', label: 'Listado'}
+            - { name: delete,   label: 'Borrar'}
+           
+            
+    list:
+        title: '%%entity_label%%'
+        actions:
+            - '- delete'
+            - { name: edit, icon: pencil, label: ''}
+            - { name: show, icon: eye, label: ''}
+        batch_actions:
+            [{ name: 'delete', ask_confirm: true }]
+   

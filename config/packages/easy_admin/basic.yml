@@ -1,0 +1,7 @@
+## easyadmin basic config.
+---
+easy_admin:
+    site_name: 'GRUPO IDEAS - <small><strong>Soluciones gráficas</strong></small>'
+    formats:
+        date:     'd/m/Y'
+        datetime: 'd/m/Y H:i:s'

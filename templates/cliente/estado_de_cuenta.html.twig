@@ -1,0 +1,70 @@
+{% extends '@EasyAdmin/default/layout.html.twig' %}
+{% block main %}
+ 
+    <div class="content">
+        <div class="col-sm-10">
+            <div class="panel panel-primary">
+                <br>
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{ cliente  }} - Estado de Cuenta</h3>
+                </div>
+                <div class="panel-body">
+
+                    <table class="table datagrid">
+                        <thead>
+                        <tr> 
+                            <th>Nro. Orden</th>
+                            <th>Fecha</th>
+                            <th>Detalle</th>
+                            <th>Precio Orden</th>
+                            <th>Pagos</th>
+                            <th>Saldo</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                             
+                            {% for orden in ordenes  %}
+                            <tr>
+                                <td>{{ orden.id}} </td>
+                                <td>{{ orden.fecha|date('d/m/Y') }}</td>
+                                <td>{{ orden.descripcion}} </td>
+                                <td>${{ orden.precio|round(2, 'ceil')}} </td>
+                                <td>  </td>
+                                <td>  </td>
+                            </tr>
+                                {% for pago in orden.pagos %} 
+                                <tr>
+                                <td> </td>
+                                <td>{{ pago.fecha|date('d/m/Y') }}</td>
+                                <td>{{ pago.descripcion }}</td>
+                                <td>  </td>
+                                <td>${{ pago.valor|round(2,'ceil') }}</td>
+                                <td></td>
+                                </tr>
+                                {% endfor %}
+                                
+                            
+                            {% endfor %}
+                             <tr>
+                              <td><strong> Total:</strong></td>
+                              <td> </td>
+                              <td> </td>
+                              <td><strong>${{ total|round(2,'ceil') }}</strong></td>
+                              <td> </td>
+                              <td><strong>${{ saldo|round(2,'ceil')}}</strong></td>
+                            </tr>
+                         </tbody>
+                    </table>
+
+                </div>
+
+                            <a href="{{ path('imprimir_resumen', ({id: cliente.id})) }}">Imprimir</a>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}
